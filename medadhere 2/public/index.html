@@ -1,0 +1,1009 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#11151c" />
+
+    <title>MedAdhere — Medication adherence & safety</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+
+    <header class="site-header" id="marketing-header">
+      <div class="site-header-inner">
+        <div class="brand-inline" aria-label="MedAdhere">
+          <span class="brand-mark" aria-hidden="true">⌁</span>
+          <span class="brand-inline-name">MedAdhere</span>
+        </div>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="#why">Why MedAdhere</a>
+          <a class="nav-link" href="#how">How It Works</a>
+          <a class="nav-link" href="#roadmap">Roadmap</a>
+        </nav>
+
+        <div class="site-header-cta">
+          <button class="ghost-link" type="button" id="privacy-details-btn">
+            Security & Privacy
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- AUTH / ONBOARDING -->
+
+    <section class="auth-shell" id="auth-card">
+      <div class="hero-topline" aria-hidden="true">
+        <span class="pill">Medication adherence</span>
+        <span class="pill pill-ghost">Interaction safety</span>
+        <span class="pill pill-ghost">Plain-language insights</span>
+      </div>
+
+      <div class="auth-grid">
+        <div class="auth-left">
+          <div class="brand">
+            <div class="brand-mark" aria-hidden="true">
+              <img class="brand-logo" src="/logo/logo.png" alt="" />
+            </div>
+            <div>
+              <div class="brand-name">MedAdhere</div>
+              <div class="brand-sub">AI-powered medication tracking</div>
+            </div>
+          </div>
+
+          <h2 class="hero-title">Never miss a medication again.</h2>
+          <p class="hero-sub">
+            MedAdhere helps you stay consistent with reminders and turns safety
+            data into plain-language guidance—so you can make the next best
+            decision with confidence.
+          </p>
+
+          <div class="hero-cred" role="list" aria-label="Trust indicators">
+            <div class="cred-item" role="listitem">
+              <span class="cred-icon" aria-hidden="true">✓</span>
+              <span>Evidence-based label data (FDA via openFDA)</span>
+            </div>
+            <div class="cred-item" role="listitem">
+              <span class="cred-icon cred-icon-teal" aria-hidden="true">✓</span>
+              <span>RxNorm mapping for consistent drug matching</span>
+            </div>
+            <div class="cred-item" role="listitem">
+              <span class="cred-icon cred-icon-amber" aria-hidden="true"
+                >i</span
+              >
+              <span>Safety summaries are not medical advice</span>
+            </div>
+          </div>
+
+          <div class="feature-list" role="list">
+            <div class="feature" role="listitem">
+              <span class="feature-check" aria-hidden="true">✓</span>
+              <div>
+                <div class="feature-title">Smart reminders</div>
+                <div class="feature-desc">
+                  Daily schedule, streaks, and adherence tracking.
+                </div>
+              </div>
+            </div>
+            <div class="feature" role="listitem">
+              <span class="feature-check" aria-hidden="true">✓</span>
+              <div>
+                <div class="feature-title">Drug interaction detection</div>
+                <div class="feature-desc">
+                  Catch common safety issues before they become problems.
+                </div>
+              </div>
+            </div>
+            <div class="feature" role="listitem">
+              <span class="feature-check" aria-hidden="true">✓</span>
+              <div>
+                <div class="feature-title">AI health insights</div>
+                <div class="feature-desc">
+                  Clear summaries you can trust, not medical jargon.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-right">
+          <div class="auth-card">
+            <div class="auth-tabs">
+              <button type="button" class="tab" id="tab-login">Login</button>
+              <button type="button" class="tab" id="tab-register">
+                Register
+              </button>
+            </div>
+
+            <form id="login-form" class="auth-form">
+              <h3 class="card-title">Welcome back</h3>
+
+              <input
+                type="email"
+                id="login-email"
+                placeholder="Email"
+                autocomplete="email"
+                required
+              />
+              <input
+                type="password"
+                id="login-password"
+                placeholder="Password"
+                autocomplete="current-password"
+                required
+              />
+
+              <button type="submit" id="login-submit-btn" class="primary-btn">
+                Continue
+              </button>
+
+              <div class="divider">
+                <span></span>
+                <span>or continue with</span>
+                <span></span>
+              </div>
+
+              <button
+                type="button"
+                id="google-signin-btn"
+                class="google-btn"
+                aria-label="Continue with Google"
+              >
+                <span class="google-icon" aria-hidden="true">G</span>
+                Continue with Google
+              </button>
+              <div id="google-btn-placeholder" style="display: none"></div>
+
+              <p
+                class="hint"
+                id="auth-error"
+                role="alert"
+                style="display: none"
+              ></p>
+
+              <p class="fineprint">
+                By continuing, you agree to our
+                <a href="#" onclick="return false;">Terms</a> and
+                <a href="#" onclick="return false;">Privacy</a>.
+              </p>
+            </form>
+
+            <form id="register-form" class="auth-form" style="display: none">
+              <h3 class="card-title">Create your account</h3>
+
+              <input
+                type="email"
+                id="register-email"
+                placeholder="Email"
+                autocomplete="email"
+                required
+              />
+              <input
+                type="password"
+                id="register-password"
+                placeholder="Password (min 6 chars)"
+                autocomplete="new-password"
+                required
+              />
+
+              <button type="submit" class="primary-btn">Create account</button>
+
+              <p
+                class="hint"
+                id="auth-error-register"
+                role="alert"
+                style="display: none"
+              ></p>
+
+              <p class="fineprint">
+                Your information is used to sync reminders and generate reports.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY / HOW / ROADMAP (marketing preview) -->
+
+    <section class="marketing-section" id="why">
+      <div class="marketing-container">
+        <div class="marketing-header">
+          <div class="section-kicker">Why MedAdhere</div>
+          <h2 class="section-title">
+            Built for trust, clarity, and real routines
+          </h2>
+          <p class="section-sub">
+            Startup-grade UX with healthcare-grade guardrails: transparent
+            sources, cautious language, and an experience designed for the
+            moment you actually need help.
+          </p>
+        </div>
+
+        <div class="marketing-grid">
+          <div class="marketing-card">
+            <div class="marketing-card-title">Healthcare trust</div>
+            <ul class="marketing-bullets">
+              <li>
+                <span aria-hidden="true">•</span> Plain-language safety
+                summaries
+              </li>
+              <li>
+                <span aria-hidden="true">•</span> Clear disclaimers and
+                limitations
+              </li>
+              <li>
+                <span aria-hidden="true">•</span> Evidence & “last checked”
+                timestamps
+              </li>
+            </ul>
+          </div>
+          <div class="marketing-card marketing-card-accent">
+            <div class="marketing-card-title">Premium SaaS feel</div>
+            <ul class="marketing-bullets">
+              <li>
+                <span aria-hidden="true">•</span> Consistent widget hierarchy
+              </li>
+              <li>
+                <span aria-hidden="true">•</span> Microinteractions and subtle
+                motion
+              </li>
+              <li>
+                <span aria-hidden="true">•</span> Calm, confident dashboard
+                layout
+              </li>
+            </ul>
+          </div>
+          <div class="marketing-card">
+            <div class="marketing-card-title">Investor demo readiness</div>
+            <ul class="marketing-bullets">
+              <li>
+                <span aria-hidden="true">•</span> Story-driven flow: schedule →
+                safety → insights
+              </li>
+              <li>
+                <span aria-hidden="true">•</span> Credible roadmap visibility
+              </li>
+              <li>
+                <span aria-hidden="true">•</span> Clear next actions in every
+                safety result
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="marketing-section" id="how">
+      <div class="marketing-container">
+        <div class="marketing-header">
+          <div class="section-kicker">How It Works</div>
+          <h2 class="section-title">
+            A simple workflow—with clinical-grade guardrails
+          </h2>
+        </div>
+
+        <div class="how-grid">
+          <div class="how-step">
+            <div class="how-num">1</div>
+            <div class="how-body">
+              <div class="how-title">Set your medication schedule</div>
+              <div class="how-sub">
+                Add meds with dosage + daily reminder time. We track completion
+                automatically.
+              </div>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">2</div>
+            <div class="how-body">
+              <div class="how-title">Run safety checks</div>
+              <div class="how-sub">
+                We map your drug names (RxNorm) and pull label text (openFDA) to
+                detect potential interactions.
+              </div>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">3</div>
+            <div class="how-body">
+              <div class="how-title">Get plain-language guidance</div>
+              <div class="how-sub">
+                AI-generated insights translate safety signals into cautious
+                next steps (not medical advice).
+              </div>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">4</div>
+            <div class="how-body">
+              <div class="how-title">Stay consistent with insights</div>
+              <div class="how-sub">
+                See adherence trends, your streak, and what’s most likely to be
+                missed—then act.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="trust-strip" role="note" aria-label="Trust & safety note">
+          <span class="trust-dot" aria-hidden="true"></span>
+          <span>
+            Safety summaries are for informational purposes and may not include
+            patient-specific factors. Always confirm with your pharmacist or
+            clinician.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="marketing-section" id="roadmap">
+      <div class="marketing-container">
+        <div class="marketing-header">
+          <div class="section-kicker">Future roadmap</div>
+          <h2 class="section-title">
+            From personal adherence to clinician-ready care
+          </h2>
+          <p class="section-sub">
+            Transparent evolution: every release improves safety, workflow, and
+            outcomes.
+          </p>
+        </div>
+
+        <div class="roadmap-grid">
+          <div class="roadmap-item">
+            <span class="roadmap-emoji" aria-hidden="true">📄</span>
+            <div>
+              <div class="roadmap-title">Doctor Reports</div>
+              <div class="roadmap-sub">
+                Share clinician-ready adherence + safety summaries with
+                citations.
+              </div>
+            </div>
+          </div>
+          <div class="roadmap-item">
+            <span class="roadmap-emoji" aria-hidden="true">📝</span>
+            <div>
+              <div class="roadmap-title">Symptom Journal</div>
+              <div class="roadmap-sub">
+                Track side effects and correlate with medication timing.
+              </div>
+            </div>
+          </div>
+          <div class="roadmap-item">
+            <span class="roadmap-emoji" aria-hidden="true">✉️</span>
+            <div>
+              <div class="roadmap-title">Email Reminders</div>
+              <div class="roadmap-sub">
+                Multi-channel reminders with calm, accessible messaging.
+              </div>
+            </div>
+          </div>
+          <div class="roadmap-item">
+            <span class="roadmap-emoji" aria-hidden="true">👥</span>
+            <div>
+              <div class="roadmap-title">Caregiver Dashboard</div>
+              <div class="roadmap-sub">
+                Care plans, auditability, and safe visibility for families.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+   
+
+    <!-- QUICK STATS -->
+
+    
+
+    <!-- HEALTH DASHBOARD -->
+
+    
+
+    <!-- AI INSIGHT -->
+
+    <section class="card ai-card" id="ai-section" style="display: none">
+      <div class="ai-card-title">
+        <h2>🧠 AI Health Insight</h2>
+        <div class="ai-card-meta">
+          Plain-language, cautious guidance • not medical advice
+        </div>
+      </div>
+
+      <p id="ai-insight">
+        Your medication adherence has improved this week. Evening doses are the
+        most commonly missed. Continue following your current schedule for
+        optimal results.
+      </p>
+
+      <div class="ai-footnote" id="ai-how">
+        How this works: we combine your adherence timeline with medication times
+        to generate plain-language next steps (not medical advice).
+      </div>
+    </section>
+
+    <div
+      id="top-actions"
+      style="display: none; padding: 0 16px; text-align: right"
+    >
+      <button id="logout-btn" class="secondary" type="button">Logout</button>
+    </div>
+
+    <main id="app-main" style="display: none" aria-hidden="true">
+      <div id="app-shell" class="app-shell">
+        <aside class="app-sidebar" aria-label="App navigation">
+          <div class="sidebar-brand">
+            <span class="brand-mark" aria-hidden="true"
+              ><img class="brand-logo" src="/logo/logo.png" alt=""
+            /></span>
+            <span class="sidebar-brand-name">MedAdhere</span>
+          </div>
+
+          <nav class="sidebar-nav" aria-label="Primary">
+            <a class="sidebar-link is-active" href="#">Overview</a>
+            <a class="sidebar-link" href="#">Medications</a>
+            <a class="sidebar-link" href="#">Safety</a>
+            <a class="sidebar-link" href="#">Reports</a>
+          </nav>
+
+          <div class="sidebar-foot">
+            <button id="logout-btn" class="secondary" type="button">
+              Logout
+            </button>
+          </div>
+        </aside>
+
+        <div class="app-content">
+           <section class="dashboard-welcome">
+  <h1>Good Afternoon 👋</h1>
+  <p>
+    Good Afternoon 👋
+
+Welcome to MedAdhere.
+Track medications, monitor adherence, and stay informed about medication safety.
+  </p>
+</section>
+
+<span class="beta-badge">
+  AI Medication Safety Platform
+</span>
+
+<!-- Quick Stats -->
+<section id="stat-strip" class="stat-strip" style="display: none">
+      <div class="stat">
+        <span class="stat-value" id="stat-count">0</span>
+        <span class="stat-label">Medications</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-value" id="stat-adherence">84%</span>
+        <span class="stat-label">Adherence</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-value" id="stat-next">1:00 PM</span>
+        <span class="stat-label">Next Dose</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-value" id="stat-warnings">1</span>
+        <span class="stat-label">Warnings</span>
+      </div>
+    </section>
+
+
+    <!-- ONBOARDING (shown only if user has no medications yet) -->
+      <section id="onboarding-shell" class="onboarding" style="display: none">
+        <div class="onboarding-top">
+          <div class="onboarding-kicker">Setup</div>
+          <h2 class="onboarding-title" id="onboarding-title">
+            First medication, in under a minute
+          </h2>
+          <p class="onboarding-sub" id="onboarding-subtitle">
+            Add your first medication schedule so we can send reminders and
+            build your adherence history.
+          </p>
+        </div>
+
+        <div class="wizard-steps" aria-hidden="true">
+          <div class="wizard-step is-active">1</div>
+          <div class="wizard-divider" aria-hidden="true">→</div>
+          <div class="wizard-step">2</div>
+        </div>
+
+        <div class="wizard-card">
+          <div class="wizard-pane" id="wizard-step-1">
+            <h3 class="wizard-heading">Medication details</h3>
+
+            <form id="first-med-form" class="wizard-form">
+              <label class="field">
+                <span class="label">Medication name</span>
+                <input
+                  type="text"
+                  id="first-med-name"
+                  placeholder="e.g., Metformin"
+                  required
+                  autocomplete="off"
+                />
+              </label>
+
+              <label class="field">
+                <span class="label">Dosage</span>
+                <input
+                  type="text"
+                  id="first-med-dosage"
+                  placeholder="e.g., 500mg"
+                  required
+                  autocomplete="off"
+                />
+              </label>
+
+              <label class="field">
+                <span class="label">Time</span>
+                <input type="time" id="first-med-time" required />
+              </label>
+
+              <div class="wizard-actions">
+                <button
+                  type="submit"
+                  class="primary-btn wide"
+                  id="first-med-continue"
+                >
+                  Continue
+                </button>
+              </div>
+
+              <p id="first-med-error" class="error-text" role="alert"></p>
+            </form>
+
+            <div class="micro-trust">
+              <span class="micro-trust-dot" aria-hidden="true"></span>
+              <span>
+                Not medical advice. We help you track your routine and surface
+                safety info.
+              </span>
+            </div>
+          </div>
+
+          <div class="wizard-pane" id="wizard-step-2" style="display: none">
+            <h3 class="wizard-heading">Confirm your setup</h3>
+
+            <div class="summary-list">
+              <div class="summary-row">
+                <span class="summary-k">Medication</span>
+                <span class="summary-v" id="first-med-summary-name">—</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-k">Dosage</span>
+                <span class="summary-v" id="first-med-summary-dosage">—</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-k">Time</span>
+                <span class="summary-v" id="first-med-summary-time">—</span>
+              </div>
+            </div>
+
+            <div class="wizard-actions">
+              <button class="secondary wide" type="button" id="wizard-back">
+                Back
+              </button>
+              <button class="primary-btn wide" type="button" id="wizard-finish">
+                Finish setup
+              </button>
+            </div>
+
+            <p class="fineprint">
+              Privacy: we use your schedule to generate reminders and reports.
+              You can remove data anytime.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- DASHBOARD (hidden until authenticated + optionally after onboarding) -->
+      <div id="dashboard-shell" style="display: none">
+        <div class="dashboard-grid">
+          <!-- Widgets: top row -->
+          <section class="widget" id="widget-health">
+            <div class="widget-title">
+              <span>Health Score</span>
+              <button
+                class="info-btn"
+                type="button"
+                aria-label="How health score is calculated"
+                title="How health score is calculated"
+              >
+                i
+              </button>
+            </div>
+            <div class="widget-body">
+              <div class="score-circle" id="health-score-circle">—</div>
+              <div class="score-meta">
+                <div class="widget-value" id="health-score-label">—</div>
+                <div class="widget-sub">Based on last 7 days adherence</div>
+                <div class="widget-big" id="streak-days"></div>
+<div class="widget-sub" id="streak-label"></div>
+<div class="risk-pill" id="risk-pill">Not checked</div>
+<div class="widget-sub" id="risk-label"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="widget" id="widget-adherence">
+            <div class="widget-title">Adherence</div>
+            <div class="widget-body">
+              <div class="widget-big" id="adherence-percent">—</div>
+              <div class="progress" aria-hidden="true">
+                <div
+                  class="progress-bar"
+                  id="adherence-bar"
+                  style="width: 0%"
+                ></div>
+              </div>
+              <div class="widget-sub">Last 7 days</div>
+            </div>
+          </section>
+
+          <section class="widget" id="widget-next-dose">
+            <div class="widget-title">Next Dose</div>
+            <div class="widget-body">
+              <div class="widget-big mono" id="next-dose">—</div>
+              <div class="widget-sub">Tap a medication to mark taken</div>
+            </div>
+          </section>
+
+          <section class="widget" id="widget-interactions">
+            <div class="widget-title">
+              <span>Safety checks</span>
+              <button
+                class="info-btn"
+                type="button"
+                aria-label="How interaction risk is generated"
+                title="How interaction risk is generated"
+              >
+                i
+              </button>
+            </div>
+            <div class="widget-body">
+              <div class="risk-line">
+                <div class="risk-pill low" id="risk-pill">Not checked</div>
+              </div>
+
+              <div class="risk-sub" id="risk-label">
+                Run a safety check to evaluate your medication combinations.
+              </div>
+
+              <div class="evidence-strip" aria-label="Evidence strip">
+                <div class="evidence-row">
+                  <span class="evidence-k">Sources</span>
+                  <span class="evidence-v"
+                    >openFDA label text + RxNorm mapping</span
+                  >
+                </div>
+                <div class="evidence-row">
+                  <span class="evidence-k">Confidence</span>
+                  <span class="evidence-v" id="interactions-confidence">—</span>
+                </div>
+              </div>
+
+              <button id="check-interactions" class="secondary" type="button">
+                Run safety check
+              </button>
+
+              <div class="last-checked" id="interactions-last-checked">
+                Last checked: —
+              </div>
+
+              <div class="ai-disclaimer" role="note">
+                Safety summaries are informational and may not include
+                patient-specific factors.
+              </div>
+            </div>
+          </section>
+
+
+
+
+
+
+
+          <div
+            id="privacy-modal"
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Security and privacy"
+            aria-hidden="true"
+          >
+            <div class="modal-panel" role="document">
+              <div class="modal-header">
+                <div class="modal-title">Security & Privacy</div>
+                <button
+                  class="modal-close"
+                  type="button"
+                  aria-label="Close"
+                  id="privacy-modal-close"
+                >
+                  ✕
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="modal-section">
+                  <div class="modal-section-title">Data use</div>
+                  <div class="modal-section-text">
+                    We use your medication schedule for reminders and adherence
+                    tracking. Safety checks are generated from drug label data
+                    and your saved medication list.
+                  </div>
+                </div>
+                <div class="modal-section">
+                  <div class="modal-section-title">Limitations</div>
+                  <div class="modal-section-text">
+                    Not medical advice. Safety summaries may not include
+                    patient-specific factors—confirm with your pharmacist or
+                    clinician.
+                  </div>
+                </div>
+                <div class="modal-section">
+                  <div class="modal-section-title">Control</div>
+                  <div class="modal-section-text">
+                    You can delete your saved medications at any time from the
+                    dashboard.
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  class="primary-btn"
+                  type="button"
+                  id="privacy-modal-done"
+                >
+                  Got it
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      
+
+          <!-- Widgets: main content -->
+          <section class="widget widget-tall">
+            <div class="widget-title">Medication timeline</div>
+            <div class="widget-body">
+              <div class="timeline" id="today-timeline"></div>
+            </div>
+          </section>
+
+          <section class="widget widget-tall">
+            <div class="widget-title">Your medications</div>
+            <div class="widget-body">
+              <form
+                id="med-form"
+                class="inline-form"
+                aria-label="Add medication"
+              >
+                <label class="field-inline">
+                  <span class="sr-only">Medication name</span>
+                  <input
+                    type="text"
+                    id="med-name"
+                    placeholder="Medication"
+                    required
+                  />
+                </label>
+                <label class="field-inline">
+                  <span class="sr-only">Dosage</span>
+                  <input
+                    type="text"
+                    id="med-dosage"
+                    placeholder="Dosage"
+                    required
+                  />
+                </label>
+                <label class="field-inline">
+                  <span class="sr-only">Time</span>
+                  <input type="time" id="med-time" required />
+                </label>
+                <button
+                  type="submit"
+                  class="primary-btn"
+                  id="add-medication-btn"
+                >
+                  Add
+                </button>
+              </form>
+
+              <ul
+                id="med-list"
+                class="med-list"
+                aria-label="Medication list"
+              ></ul>
+              <p id="med-error" class="error-text" role="alert"></p>
+            </div>
+          </section>
+
+          <section class="widget widget-tall" id="widget-safety-results">
+            <div class="widget-title">
+              <span>Safety details</span>
+              <span class="widget-tag" aria-hidden="true">Plain language</span>
+            </div>
+            <div class="widget-body">
+              <div id="interaction-results" class="interaction-results">
+                <div class="empty-state" id="interaction-empty">
+                  <div class="empty-icon" aria-hidden="true">🛡️</div>
+                  <div class="empty-title">No safety results yet</div>
+                  <div class="empty-sub">
+                    Run a check to see potential interactions, with cautious
+                    next steps and evidence notes.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="trust-citations"
+                role="note"
+                aria-label="Citations note"
+              >
+                <div class="citations-title">Evidence</div>
+                <div class="citations-sub">
+                  Label text is used to generate summaries. View details to see
+                  what triggered this warning.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="widget">
+            <div class="widget-title">AI Health Insight</div>
+            <div class="widget-body">
+              <div id="ai-section" class="ai-section">
+                <p id="ai-insight">—</p>
+                <div class="ai-footnote">Your medication adherence is being analyzed.
+
+Current metrics:
+• Adherence tracking active
+• Safety monitoring active
+• Interaction detection enabled
+
+Personalized AI recommendations will appear as more medication data is collected.</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="widget">
+            <div class="widget-title">
+              <span>Symptom Journal</span>
+              <span class="widget-tag">Roadmap</span>
+            </div>
+            <div class="widget-body">
+              <div class="empty-state">
+                <div class="empty-icon" aria-hidden="true">📝</div>
+                <div class="empty-title">
+                  Side effects, correlated to timing
+                </div>
+                <div class="empty-sub">
+                  Coming next: record symptoms and link them to adherence +
+                  safety insights.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="widget">
+            <div class="widget-title">Upcoming reminders</div>
+            <div class="widget-body">
+              <ul id="notifications-list" class="feed"></ul>
+            </div>
+          </section>
+
+          <section class="widget">
+            <div class="widget-title">Weekly summary</div>
+            <div class="widget-body">
+              <div class="summary-metrics">
+                <div class="summary-row">
+                  <span class="summary-k" id="weekly-total"
+                    >Total scheduled doses</span
+                  ><span class="summary-v" id="weekly-total-val">—</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-k" id="weekly-completed"
+                    >Completed doses</span
+                  ><span class="summary-v" id="weekly-completed-val">—</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-k" id="weekly-adherence"
+                    >Adherence score</span
+                  ><span class="summary-v" id="weekly-adherence-val">—</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="widget" id="widget-reports">
+            <div class="widget-title">
+              <span>Doctor Reports</span>
+              <span class="widget-tag">Roadmap</span>
+            </div>
+            <div class="widget-body">
+              <div class="empty-state">
+                <div class="empty-icon" aria-hidden="true">📄</div>
+                <button disabled>Genrate Report</button>
+                <div class="empty-title">Clinician-ready summaries</div>
+                <div class="empty-sub">
+                  Your medication adherence is being analyzed.
+
+Current metrics:
+• Adherence tracking active
+• Safety monitoring active
+• Interaction detection enabled
+
+Personalized AI recommendations will appear as more medication data is collected.
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Set this to your Google OAuth Web Client ID.
+      // For production you’d inject this via server-side templating or a build step.
+      window.GOOGLE_CLIENT_ID =
+        window.GOOGLE_CLIENT_ID ||
+        "692120893547-p8lf5ofddh28j7bofiieh8128d6ahkls.apps.googleusercontent.com";
+    </script>
+
+    <script>
+      // Simple modal for demo/static marketing copy.
+      (function () {
+        const btn = document.getElementById("privacy-details-btn");
+        const modal = document.getElementById("privacy-modal");
+        const closeBtn = document.getElementById("privacy-modal-close");
+        const doneBtn = document.getElementById("privacy-modal-done");
+        if (!btn || !modal) return;
+
+        function open() {
+          modal.classList.add("is-open");
+        }
+        function close() {
+          modal.classList.remove("is-open");
+        }
+
+        btn.addEventListener("click", open);
+        closeBtn?.addEventListener("click", close);
+        doneBtn?.addEventListener("click", close);
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) close();
+        });
+        window.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") close();
+        });
+      })();
+    </script>
+
+    <script src="google.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
